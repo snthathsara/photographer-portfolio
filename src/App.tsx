@@ -31,7 +31,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-[#E1E0CC] selection:bg-[#DEDBC8] selection:text-black transition-colors duration-500">
+    <div className="min-h-screen bg-[#F7F5EE] dark:bg-black text-[#141310] dark:text-[#E1E0CC] selection:bg-[#DEDBC8] selection:text-black transition-colors duration-500">
       <Navbar isDark={isDark} toggleTheme={toggleTheme} />
       <main>
         <Hero />

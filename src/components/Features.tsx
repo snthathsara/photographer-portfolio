@@ -21,7 +21,7 @@ export const Features: React.FC = () => {
   };
 
   return (
-    <section id="features" className="relative min-h-screen py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-black">
+    <section id="features" className="relative min-h-screen py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-[#F7F5EE] dark:bg-black transition-colors duration-500">
       {/* Subtle noise overlay */}
       <div className="bg-noise absolute inset-0 opacity-[0.15] pointer-events-none" />
 
@@ -33,11 +33,11 @@ export const Features: React.FC = () => {
             segments={[
               {
                 text: 'Studio-grade optical workflows for visionary collectors.',
-                className: 'text-[#DEDBC8] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal',
+                className: 'text-neutral-900 dark:text-[#DEDBC8] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal',
               },
             ]}
           />
-          <span className="text-gray-500 text-lg sm:text-xl md:text-2xl font-light">
+          <span className="text-neutral-500 dark:text-gray-400 text-lg sm:text-xl md:text-2xl font-light">
             Built for pure vision. Powered by optical art.
           </span>
         </div>
@@ -53,7 +53,7 @@ export const Features: React.FC = () => {
             variants={cardVariants}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
-            className="relative rounded-2xl md:rounded-3xl overflow-hidden h-[420px] lg:h-full border border-white/10 group shadow-2xl"
+            className="relative rounded-2xl md:rounded-3xl overflow-hidden h-[420px] lg:h-full border border-neutral-300 dark:border-white/10 group shadow-xl dark:shadow-2xl"
           >
             <video
               autoPlay
@@ -69,10 +69,10 @@ export const Features: React.FC = () => {
             </video>
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 z-10">
-              <span className="text-xs uppercase tracking-widest text-[#DEDBC8]/80 font-mono block mb-1">
+              <span className="text-xs uppercase tracking-widest text-[#DEDBC8]/90 font-mono block mb-1">
                 Visual Canvas
               </span>
-              <h3 className="text-xl sm:text-2xl text-[#E1E0CC] font-normal">
+              <h3 className="text-xl sm:text-2xl text-white font-normal">
                 Your creative horizon.
               </h3>
             </div>
@@ -84,38 +84,38 @@ export const Features: React.FC = () => {
             variants={cardVariants}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
-            className="rounded-2xl md:rounded-3xl bg-[#212121] border border-white/10 p-6 sm:p-7 flex flex-col justify-between h-[420px] lg:h-full group hover:border-[#DEDBC8]/40 transition-colors shadow-2xl"
+            className="rounded-2xl md:rounded-3xl bg-white dark:bg-[#212121] border border-neutral-200 dark:border-white/10 p-6 sm:p-7 flex flex-col justify-between h-[420px] lg:h-full group hover:border-black/30 dark:hover:border-[#DEDBC8]/40 transition-colors shadow-xl dark:shadow-2xl"
           >
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between">
-                <span className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-xs font-mono text-[#DEDBC8]">
+                <span className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-xs font-mono text-neutral-900 dark:text-[#DEDBC8]">
                   01
                 </span>
-                <span className="text-[11px] uppercase tracking-wider text-gray-400 font-mono">
+                <span className="text-[11px] uppercase tracking-wider text-neutral-500 dark:text-gray-400 font-mono">
                   Expedition
                 </span>
               </div>
               <div>
-                <h3 className="text-xl font-medium text-[#E1E0CC]">Project Storyboard.</h3>
-                <p className="text-xs text-gray-400 mt-1">Multi-season terrain documentation.</p>
+                <h3 className="text-xl font-medium text-neutral-900 dark:text-[#E1E0CC]">Project Storyboard.</h3>
+                <p className="text-xs text-neutral-500 dark:text-gray-400 mt-1">Multi-season terrain documentation.</p>
               </div>
 
               {/* Checklist */}
               <div className="flex flex-col gap-2.5 mt-2">
-                <div className="flex items-start gap-2.5 text-xs text-gray-300">
-                  <Check className="w-4 h-4 text-[#DEDBC8] shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 text-xs text-neutral-700 dark:text-gray-300">
+                  <Check className="w-4 h-4 text-black dark:text-[#DEDBC8] shrink-0 mt-0.5" />
                   <span>Pre-dawn celestial tracking</span>
                 </div>
-                <div className="flex items-start gap-2.5 text-xs text-gray-300">
-                  <Check className="w-4 h-4 text-[#DEDBC8] shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 text-xs text-neutral-700 dark:text-gray-300">
+                  <Check className="w-4 h-4 text-black dark:text-[#DEDBC8] shrink-0 mt-0.5" />
                   <span>Topographic weather forecasting</span>
                 </div>
-                <div className="flex items-start gap-2.5 text-xs text-gray-300">
-                  <Check className="w-4 h-4 text-[#DEDBC8] shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 text-xs text-neutral-700 dark:text-gray-300">
+                  <Check className="w-4 h-4 text-black dark:text-[#DEDBC8] shrink-0 mt-0.5" />
                   <span>GPS geo-referenced monographs</span>
                 </div>
-                <div className="flex items-start gap-2.5 text-xs text-gray-300">
-                  <Check className="w-4 h-4 text-[#DEDBC8] shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 text-xs text-neutral-700 dark:text-gray-300">
+                  <Check className="w-4 h-4 text-black dark:text-[#DEDBC8] shrink-0 mt-0.5" />
                   <span>Complete raw spectrum archives</span>
                 </div>
               </div>
@@ -123,7 +123,7 @@ export const Features: React.FC = () => {
 
             <a
               href="#gallery"
-              className="inline-flex items-center gap-2 text-xs font-medium text-[#DEDBC8] hover:text-white transition-colors pt-4 border-t border-white/5"
+              className="inline-flex items-center gap-2 text-xs font-medium text-neutral-900 dark:text-[#DEDBC8] hover:text-black dark:hover:text-white transition-colors pt-4 border-t border-neutral-100 dark:border-white/5"
             >
               <span>Explore projects</span>
               <ArrowRight className="w-3.5 h-3.5 -rotate-45 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -136,34 +136,34 @@ export const Features: React.FC = () => {
             variants={cardVariants}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
-            className="rounded-2xl md:rounded-3xl bg-[#212121] border border-white/10 p-6 sm:p-7 flex flex-col justify-between h-[420px] lg:h-full group hover:border-[#DEDBC8]/40 transition-colors shadow-2xl"
+            className="rounded-2xl md:rounded-3xl bg-white dark:bg-[#212121] border border-neutral-200 dark:border-white/10 p-6 sm:p-7 flex flex-col justify-between h-[420px] lg:h-full group hover:border-black/30 dark:hover:border-[#DEDBC8]/40 transition-colors shadow-xl dark:shadow-2xl"
           >
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between">
-                <span className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-xs font-mono text-[#DEDBC8]">
+                <span className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-xs font-mono text-neutral-900 dark:text-[#DEDBC8]">
                   02
                 </span>
-                <span className="text-[11px] uppercase tracking-wider text-gray-400 font-mono">
+                <span className="text-[11px] uppercase tracking-wider text-neutral-500 dark:text-gray-400 font-mono">
                   Optical
                 </span>
               </div>
               <div>
-                <h3 className="text-xl font-medium text-[#E1E0CC]">Optical Mastery.</h3>
-                <p className="text-xs text-gray-400 mt-1">Medium-format sensor science.</p>
+                <h3 className="text-xl font-medium text-neutral-900 dark:text-[#E1E0CC]">Optical Mastery.</h3>
+                <p className="text-xs text-neutral-500 dark:text-gray-400 mt-1">Medium-format sensor science.</p>
               </div>
 
               {/* Checklist */}
               <div className="flex flex-col gap-2.5 mt-2">
-                <div className="flex items-start gap-2.5 text-xs text-gray-300">
-                  <Check className="w-4 h-4 text-[#DEDBC8] shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 text-xs text-neutral-700 dark:text-gray-300">
+                  <Check className="w-4 h-4 text-black dark:text-[#DEDBC8] shrink-0 mt-0.5" />
                   <span>16-bit Hasselblad color calibration</span>
                 </div>
-                <div className="flex items-start gap-2.5 text-xs text-gray-300">
-                  <Check className="w-4 h-4 text-[#DEDBC8] shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 text-xs text-neutral-700 dark:text-gray-300">
+                  <Check className="w-4 h-4 text-black dark:text-[#DEDBC8] shrink-0 mt-0.5" />
                   <span>Leica apochromatic optics</span>
                 </div>
-                <div className="flex items-start gap-2.5 text-xs text-gray-300">
-                  <Check className="w-4 h-4 text-[#DEDBC8] shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 text-xs text-neutral-700 dark:text-gray-300">
+                  <Check className="w-4 h-4 text-black dark:text-[#DEDBC8] shrink-0 mt-0.5" />
                   <span>15 stops of optical dynamic range</span>
                 </div>
               </div>
@@ -171,7 +171,7 @@ export const Features: React.FC = () => {
 
             <a
               href="#gear"
-              className="inline-flex items-center gap-2 text-xs font-medium text-[#DEDBC8] hover:text-white transition-colors pt-4 border-t border-white/5"
+              className="inline-flex items-center gap-2 text-xs font-medium text-neutral-900 dark:text-[#DEDBC8] hover:text-black dark:hover:text-white transition-colors pt-4 border-t border-neutral-100 dark:border-white/5"
             >
               <span>Inspect gear</span>
               <ArrowRight className="w-3.5 h-3.5 -rotate-45 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -184,34 +184,34 @@ export const Features: React.FC = () => {
             variants={cardVariants}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
-            className="rounded-2xl md:rounded-3xl bg-[#212121] border border-white/10 p-6 sm:p-7 flex flex-col justify-between h-[420px] lg:h-full group hover:border-[#DEDBC8]/40 transition-colors shadow-2xl"
+            className="rounded-2xl md:rounded-3xl bg-white dark:bg-[#212121] border border-neutral-200 dark:border-white/10 p-6 sm:p-7 flex flex-col justify-between h-[420px] lg:h-full group hover:border-black/30 dark:hover:border-[#DEDBC8]/40 transition-colors shadow-xl dark:shadow-2xl"
           >
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between">
-                <span className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-xs font-mono text-[#DEDBC8]">
+                <span className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-xs font-mono text-neutral-900 dark:text-[#DEDBC8]">
                   03
                 </span>
-                <span className="text-[11px] uppercase tracking-wider text-gray-400 font-mono">
+                <span className="text-[11px] uppercase tracking-wider text-neutral-500 dark:text-gray-400 font-mono">
                   Atelier
                 </span>
               </div>
               <div>
-                <h3 className="text-xl font-medium text-[#E1E0CC]">Immersion Capsule.</h3>
-                <p className="text-xs text-gray-400 mt-1">Archival printmaking craft.</p>
+                <h3 className="text-xl font-medium text-neutral-900 dark:text-[#E1E0CC]">Immersion Capsule.</h3>
+                <p className="text-xs text-neutral-500 dark:text-gray-400 mt-1">Archival printmaking craft.</p>
               </div>
 
               {/* Checklist */}
               <div className="flex flex-col gap-2.5 mt-2">
-                <div className="flex items-start gap-2.5 text-xs text-gray-300">
-                  <Check className="w-4 h-4 text-[#DEDBC8] shrink-0 mt-0.5" />
-                  <span>310gsm 100% cotton rag rag paper</span>
+                <div className="flex items-start gap-2.5 text-xs text-neutral-700 dark:text-gray-300">
+                  <Check className="w-4 h-4 text-black dark:text-[#DEDBC8] shrink-0 mt-0.5" />
+                  <span>310gsm 100% cotton rag paper</span>
                 </div>
-                <div className="flex items-start gap-2.5 text-xs text-gray-300">
-                  <Check className="w-4 h-4 text-[#DEDBC8] shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 text-xs text-neutral-700 dark:text-gray-300">
+                  <Check className="w-4 h-4 text-black dark:text-[#DEDBC8] shrink-0 mt-0.5" />
                   <span>Pigment ink permanence (200+ years)</span>
                 </div>
-                <div className="flex items-start gap-2.5 text-xs text-gray-300">
-                  <Check className="w-4 h-4 text-[#DEDBC8] shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 text-xs text-neutral-700 dark:text-gray-300">
+                  <Check className="w-4 h-4 text-black dark:text-[#DEDBC8] shrink-0 mt-0.5" />
                   <span>Hand-signed certificates &amp; seals</span>
                 </div>
               </div>
@@ -219,7 +219,7 @@ export const Features: React.FC = () => {
 
             <a
               href="#prints"
-              className="inline-flex items-center gap-2 text-xs font-medium text-[#DEDBC8] hover:text-white transition-colors pt-4 border-t border-white/5"
+              className="inline-flex items-center gap-2 text-xs font-medium text-neutral-900 dark:text-[#DEDBC8] hover:text-black dark:hover:text-white transition-colors pt-4 border-t border-neutral-100 dark:border-white/5"
             >
               <span>Configure prints</span>
               <ArrowRight className="w-3.5 h-3.5 -rotate-45 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

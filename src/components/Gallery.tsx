@@ -183,20 +183,20 @@ export const Gallery: React.FC = () => {
   };
 
   return (
-    <section id="gallery" className="py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-black">
+    <section id="gallery" className="py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-[#F7F5EE] dark:bg-black transition-colors duration-500">
       <div className="max-w-7xl mx-auto flex flex-col gap-10">
         
         {/* Header Row (Inspired by Image 2) */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-white/10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-neutral-200 dark:border-white/10">
           <div>
-            <span className="text-xs uppercase tracking-widest text-[#DEDBC8] font-mono block mb-2 font-medium">
+            <span className="text-xs uppercase tracking-widest text-neutral-500 dark:text-[#DEDBC8] font-mono block mb-2 font-medium">
               Curated Works
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#E1E0CC] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-neutral-900 dark:text-[#E1E0CC] tracking-tight">
               Photo Gallery
             </h2>
           </div>
-          <p className="text-gray-400 text-xs sm:text-sm md:text-base max-w-md font-light leading-relaxed">
+          <p className="text-neutral-500 dark:text-gray-400 text-xs sm:text-sm md:text-base max-w-md font-light leading-relaxed">
             Captured moments from our desert expeditions, mountain trails, and architectural surveys worldwide.
           </p>
         </div>
@@ -211,8 +211,8 @@ export const Gallery: React.FC = () => {
                 onClick={() => setSelectedFilter(tab.id)}
                 className={`relative px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
                   isActive
-                    ? 'bg-[#DEDBC8] text-black shadow-lg shadow-[#DEDBC8]/10'
-                    : 'bg-[#181818] text-gray-300 hover:text-white border border-white/5 hover:border-white/15'
+                    ? 'bg-black dark:bg-[#DEDBC8] text-white dark:text-black shadow-lg shadow-black/10 dark:shadow-[#DEDBC8]/10'
+                    : 'bg-white dark:bg-[#181818] text-neutral-700 dark:text-gray-300 hover:text-black dark:hover:text-white border border-neutral-200 dark:border-white/5 hover:border-neutral-300 dark:hover:border-white/15'
                 }`}
               >
                 {tab.label}
@@ -238,7 +238,7 @@ export const Gallery: React.FC = () => {
                   exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.45 }}
                   onClick={() => setLightboxIndex(index)}
-                  className={`group relative rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer border border-white/10 bg-[#121212] ${colClass} ${heightClass} shadow-xl`}
+                  className={`group relative rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer border border-neutral-200 dark:border-white/10 bg-neutral-100 dark:bg-[#121212] ${colClass} ${heightClass} shadow-xl`}
                 >
                   <img
                     src={photo.thumb}
