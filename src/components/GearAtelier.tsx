@@ -1,0 +1,78 @@
+import React from 'react';
+import { Camera, Eye, Disc, Cpu } from 'lucide-react';
+
+export const GearAtelier: React.FC = () => {
+  const tools = [
+    {
+      icon: Camera,
+      title: 'Hasselblad X2D 100C',
+      type: '100MP Medium Format BSI CMOS',
+      desc: '16-bit color depth delivering 281 trillion colors and 15 stops of dynamic range for architectural exhibitions.',
+    },
+    {
+      icon: Eye,
+      title: 'Leica M11 Rangefinder',
+      type: '60MP Full-Frame / Noctilux Glass',
+      desc: 'Silent focal plane shutter and discreet manual focus for intimate desert caravans and atmospheric encounters.',
+    },
+    {
+      icon: Disc,
+      title: 'Apochromatic Prime Arsenal',
+      type: 'Summicron 35mm / XCD 55mm & 90mm',
+      desc: 'German precision glass elements maintaining corner-to-corner micro-contrast and zero optical distortion.',
+    },
+    {
+      icon: Cpu,
+      title: 'Color Calibration Atelier',
+      type: 'Capture One Pro / EIZO ColorEdge',
+      desc: 'Rigorous color-managed workflow calibrated to Fogra39 and Adobe RGB 1998 museum standards.',
+    },
+  ];
+
+  return (
+    <section id="gear" className="py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-black border-t border-white/5">
+      <div className="max-w-6xl mx-auto flex flex-col gap-12">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-white/10">
+          <div>
+            <span className="text-xs uppercase tracking-widest text-[#DEDBC8] font-mono block mb-2 font-medium">
+              Optical Craftsmanship
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#E1E0CC] tracking-tight">
+              The Optical Arsenal
+            </h2>
+          </div>
+          <p className="text-gray-400 text-xs sm:text-sm md:text-base max-w-md font-light leading-relaxed">
+            Uncompromising medium-format digital backs and German prime glass configured for extreme field reliability.
+          </p>
+        </div>
+
+        {/* 4 Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          {tools.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={idx}
+                className="p-6 sm:p-8 rounded-2xl md:rounded-3xl bg-[#141414] border border-white/10 hover:border-[#DEDBC8]/40 transition-colors flex gap-5 group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#DEDBC8] shrink-0 group-hover:bg-[#DEDBC8] group-hover:text-black transition-colors">
+                  <Icon className="w-6 h-6" />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <h3 className="text-lg sm:text-xl font-medium text-[#E1E0CC]">{item.title}</h3>
+                  <span className="text-xs font-mono text-[#DEDBC8] tracking-wider">{item.type}</span>
+                  <p className="text-xs sm:text-sm text-gray-400 font-light mt-1 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+      </div>
+    </section>
+  );
+};
