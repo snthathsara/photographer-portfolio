@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURELIA VANCE — Botanical & Fine Art Photography</title>
+  <meta name="description" content="Visual portfolio of Aurelia Vance — fine art landscape, botanical, and editorial photographer exploring earthly textures and human connection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Ambient Glow -->
+  <div class="ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow glow-middle" aria-hidden="true"></div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="Aurelia Vance Portfolio Home">
+        <span class="brand-symbol">AV</span>
+        <span class="brand-text">
+          <span class="brand-name">Aurelia Vance</span>
+          <span class="brand-sub">Visual Atelier / 2026</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav Menu (Clean pill container, no dots!) -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#series" class="nav-link">Series</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#prints" class="nav-link">Prints</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Theme Switcher Button -->
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Light and Dark Mode" title="Switch Theme">
+          <span class="toggle-icon-wrap" aria-hidden="true">
+            <!-- Sun Icon for Light Mode -->
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <!-- Moon Icon for Dark Mode -->
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </span>
+          <span class="theme-label" id="themeLabel">Dark Theme</span>
+        </button>
+
+        <!-- Sound Shutter FX Toggle -->
+        <button id="shutterSoundBtn" class="action-icon-btn" aria-label="Toggle Camera Shutter Audio Feedback" title="Camera Shutter SFX">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M23 7l-7 5 7 5V7z"></path>
+            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+          </svg>
+        </button>
+
+        <!-- Inquire CTA -->
+        <a href="#contact" class="btn btn-primary btn-sm header-cta">Book Session</a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="mobile-toggle-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div id="mobileDrawer" class="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer-content">
+      <ul class="mobile-nav-list">
+        <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+        <li><a href="#series" class="mobile-nav-link">Series</a></li>
+        <li><a href="#gallery" class="mobile-nav-link">Photo Gallery</a></li>
+        <li><a href="#about" class="mobile-nav-link">The Artist & Gear</a></li>
+        <li><a href="#prints" class="mobile-nav-link">Fine Art Prints</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Inquiries</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="#contact" class="btn btn-primary btn-block">Inquire for Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION (Inspired by Image 3 Botanical & Image 1 Portfolio Hero) -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        
+        <div class="hero-card-banner">
+          <div class="hero-image-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=2000&auto=format&fit=crop" 
+              alt="Lush botanical emerald ferns and natural leaves" 
+              class="hero-bg-img"
+              loading="eager"
+            >
+            <div class="hero-gradient-overlay"></div>
+          </div>
+
+          <div class="hero-top-content">
+            <!-- Clean Header badge WITHOUT any dots! -->
+            <div class="hero-kicker-tag">
+              <span>Fine Art &amp; Editorial Photography</span>
+              <span class="kicker-sep">/</span>
+              <span>Based in Kyoto &amp; Worldwide</span>
+            </div>
+
+            <h1 class="hero-title">
+              Capturing the soul of <span class="highlight-serif">botanical</span> &amp; wild silence
+            </h1>
+
+            <p class="hero-lead">
+              Light carved through prehistoric ferns, ancient sand dunes, and quiet human encounters. 
+              Creating atmospheric visual archives for architectural publications, luxury eco-resorts, and fine art collectors.
+            </p>
+          </div>
+
+          <div class="hero-bottom-bar">
+            <!-- Floating Info Card (Bottom-left inspired by Image 3 '99+ Beans' box, adapted for photography) -->
+            <div class="hero-floating-stat">
+              <div class="stat-text-col">
+                <span class="stat-number">14+ Years</span>
+                <span class="stat-label">Wilderness Expeditions</span>
+                <p class="stat-desc">Documenting primeval biodiversity across 32 countries.</p>
+              </div>
+              <div class="stat-visual-preview">
+                <div class="preview-mini-thumb thumb-1" title="Lush Rainforest"></div>
+                <div class="preview-mini-thumb thumb-2" title="Desert Monolith"></div>
+                <div class="preview-mini-thumb thumb-3" title="Alpine Mist"></div>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#gallery" class="btn btn-primary">
+                Explore Photo Gallery
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="btn-arrow">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#series" class="btn btn-secondary">Featured Series</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editorial Statement Strip (Inspired by Image 3 middle strip) -->
+        <div class="editorial-strip">
+          <div class="strip-item strip-left">
+            <span class="strip-eyebrow">From Deep Foliage to Desert Solitude</span>
+            <p class="strip-heading">Every frame is a meditation on light, organic patience, and raw texture.</p>
+          </div>
+          <div class="strip-item strip-media">
+            <div class="strip-thumbnail-card">
+              <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=600&auto=format&fit=crop" alt="Sunlight beaming through deep woodland trees">
+              <span class="play-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="strip-item strip-right">
+            <p class="strip-quote">
+              "We do not capture merely what nature looks like. We preserve the breath, the humidity, and the stillness of moments forgotten by time."
+            </p>
+            <span class="strip-author">— Aurelia Vance, Monograph 2026</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED SERIES SECTION (Inspired by Image 3's 3-Column Botanical Destination Cards) -->
+    <section class="section series-section" id="series">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-kicker">Curated Expeditions</span>
+            <h2 class="section-title">Featured Photographic Series</h2>
+          </div>
+          <p class="section-desc">
+            Long-term documentary projects exploring remote habitats, architectural flora, and extreme landscapes.
+          </p>
+        </div>
+
+        <div class="series-grid">
+          <!-- Card 1: Kyoto Moss & Rainforest -->
+          <article class="series-card" data-series="kyoto">
+            <div class="series-card-bg">
+              <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=1000&auto=format&fit=crop" alt="Kyoto temple garden surrounded by lush green moss" loading="lazy">
+              <div class="series-card-overlay"></div>
+            </div>
+            <div class="series-card-content">
+              <div class="series-card-top">
+                <span class="series-badge">Monograph 01</span>
+                <button class="series-action-btn" aria-label="Open Kyoto Series Lightbox" data-gallery-target="botanical">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+              <div class="series-card-info">
+                <h3 class="series-name">Kyoto Moss &amp; Ferns</h3>
+                <p class="series-summary">
+                  A three-year study of ancient Zen garden mosses, misty bamboo grooves, and rainfall patterns in Kansai.
+                </p>
+                <div class="series-meta-row">
+                  <span class="meta-tag">Japan / 35mm f/1.4</span>
+                  <span class="meta-tag">28 Works</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: AlUla & Desert Monoliths (Inspired by Image 2 Desert Theme) -->
+          <article class="series-card" data-series="alula">
+            <div class="series-card-bg">
+              <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1000&auto=format&fit=crop" alt="Dramatic golden sandstone desert dunes and ripples" loading="lazy">
+              <div class="series-card-overlay"></div>
+            </div>
+            <div class="series-card-content">
+              <div class="series-card-top">
+                <span class="series-badge">Monograph 02</span>
+                <button class="series-action-btn" aria-label="Open AlUla Series Lightbox" data-gallery-target="desert">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+              <div class="series-card-info">
+                <h3 class="series-name">AlUla Sand &amp; Wind</h3>
+                <p class="series-summary">
+                  Sculpted sandstone canyons, golden hour dunes, and silent caravanserai paths across Saudi Arabia.
+                </p>
+                <div class="series-meta-row">
+                  <span class="meta-tag">Arabia / 50mm f/1.2</span>
+                  <span class="meta-tag">34 Works</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Nordic Solitude & Glacial Flora -->
+          <article class="series-card" data-series="nordic">
+            <div class="series-card-bg">
+              <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1000&auto=format&fit=crop" alt="Ethereal green misty pine mountains with dramatic morning fog" loading="lazy">
+              <div class="series-card-overlay"></div>
+            </div>
+            <div class="series-card-content">
+              <div class="series-card-top">
+                <span class="series-badge">Monograph 03</span>
+                <button class="series-action-btn" aria-label="Open Nordic Series Lightbox" data-gallery-target="wilds">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+              <div class="series-card-info">
+                <h3 class="series-name">Nordic Mist &amp; Pines</h3>
+                <p class="series-summary">
+                  Arctic pine needles, glacial fjords, and alpine lichen enduring sub-zero stillness in the Lofoten islands.
+                </p>
+                <div class="series-meta-row">
+                  <span class="meta-tag">Norway / 70-200mm f/2.8</span>
+                  <span class="meta-tag">22 Works</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTO GALLERY SECTION (Inspired by Image 2 Editorial Layout) -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        
+        <div class="gallery-header-row">
+          <div class="gallery-title-block">
+            <span class="section-kicker">Curated Works</span>
+            <h2 class="section-title">Photo Gallery</h2>
+          </div>
+          <div class="gallery-desc-block">
+            <p class="gallery-subtitle">Captured moments from our desert trips, wilderness trails, and botanical sanctuaries.</p>
+          </div>
+        </div>
+
+        <!-- Filter Controls (Clean pills, NO dots in front of text!) -->
+        <div class="gallery-filters-bar">
+          <div class="gallery-filters" role="tablist" aria-label="Gallery Categories">
+            <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All Works</button>
+            <button class="filter-tab" data-filter="desert" role="tab" aria-selected="false">Desert &amp; Dunes</button>
+            <button class="filter-tab" data-filter="botanical" role="tab" aria-selected="false">Botanical &amp; Flora</button>
+            <button class="filter-tab" data-filter="cinematic" role="tab" aria-selected="false">Cinematic Portrait</button>
+            <button class="filter-tab" data-filter="wilds" role="tab" aria-selected="false">Wild Landscapes</button>
+          </div>
+        </div>
+
+        <!-- Editorial Asymmetrical Masonry Grid (Directly matching Image 2 layout & bounded image sizes) -->
+        <div class="gallery-grid" id="galleryGrid">
+
+          <!-- ROW 1 (Matching Image 2: Wide Landscape 60% + Tall Portrait 40%) -->
+          <!-- Item 1: Desert Monolith Landscape -->
+          <figure class="gallery-item col-span-7 row-h-primary" data-category="desert" tabindex="0"
+                  data-title="Monolith at Sunbreak" 
+                  data-location="AlUla Valley, Saudi Arabia" 
+                  data-camera="Leica M11 / Summicron-M 35mm f/2 ASPH" 
+                  data-exif="f/8.0 / 1/800s / ISO 100"
+                  data-full="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2000&auto=format&fit=crop">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1200&auto=format&fit=crop" alt="Towering golden rock monolith in desert" loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span class="item-category">Desert &amp; Dunes</span>
+                  <h4 class="item-title">Monolith at Sunbreak</h4>
+                  <span class="item-loc">AlUla Valley, Arabia</span>
+                </div>
+                <button class="item-expand-btn" aria-label="View High-Resolution Image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                </button>
+              </div>
+            </div>
+          </figure>
+
+          <!-- Item 2: Footprints in Wind (Tall Portrait) -->
+          <figure class="gallery-item col-span-5 row-h-primary" data-category="desert" tabindex="0"
+                  data-title="Footprints in Wind" 
+                  data-location="Rub' al Khali, Empty Quarter" 
+                  data-camera="Sony α7R V / FE 24-70mm f/2.8 GM II" 
+                  data-exif="f/5.6 / 1/1000s / ISO 100"
+                  data-full="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=2000&auto=format&fit=crop">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1000&auto=format&fit=crop" alt="Red curved sand dunes with footsteps" loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span class="item-category">Desert &amp; Dunes</span>
+                  <h4 class="item-title">Footprints in Wind</h4>
+                  <span class="item-loc">Empty Quarter</span>
+                </div>
+                <button class="item-expand-btn" aria-label="View High-Resolution Image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                </button>
+              </div>
+            </div>
+          </figure>
+
+          <!-- ROW 2 (Matching Image 2: 3 Balanced Columns) -->
+          <!-- Item 3: Golden Caravan in Dunes -->
+          <figure class="gallery-item col-span-4 row-h-secondary" data-category="desert" tabindex="0"
+                  data-title="Golden Hour Crossing" 
+                  data-location="Wadi Rum Protected Area, Jordan" 
+                  data-camera="Hasselblad X2D 100C / XCD 90mm f/2.5" 
+                  data-exif="f/4.5 / 1/640s / ISO 100"
+                  data-full="https://images.unsplash.com/photo-1547234935-80c7145ec969?q=80&w=2000&auto=format&fit=crop">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1547234935-80c7145ec969?q=80&w=1000&auto=format&fit=crop" alt="Dramatic sunset over rippling desert sand dunes" loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span class="item-category">Desert &amp; Dunes</span>
+                  <h4 class="item-title">Golden Hour Crossing</h4>
+                  <span class="item-loc">Wadi Rum, Jordan</span>
+                </div>
+                <button class="item-expand-btn" aria-label="View High-Resolution Image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                </button>
+              </div>
+            </div>
+          </figure>
+
+          <!-- Item 4: Echoes in Crimson Linen (Sunset Portrait) -->
+          <figure class="gallery-item col-span-4 row-h-secondary" data-category="cinematic" tabindex="0"
+                  data-title="Echoes in Crimson Linen" 
+                  data-location="Sahara Borderlands" 
+                  data-camera="Leica M11 / Noctilux-M 50mm f/0.95" 
+                  data-exif="f/1.2 / 1/2000s / ISO 50"
+                  data-full="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2000&auto=format&fit=crop">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop" alt="Cinematic editorial portrait with soft natural rim lighting" loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span class="item-category">Cinematic Portrait</span>
+                  <h4 class="item-title">Echoes in Crimson Linen</h4>
+                  <span class="item-loc">Sahara Borderlands</span>
+                </div>
+                <button class="item-expand-btn" aria-label="View High-Resolution Image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                </button>
+              </div>
+            </div>
+          </figure>
+
+          <!-- Item 5: Chamber of Amber Light (Slot Canyon) -->
+          <figure class="gallery-item col-span-4 row-h-secondary" data-category="wilds" tabindex="0"
+                  data-title="Chamber of Amber Light" 
+                  data-location="Page, Arizona Sandstone" 
+                  data-camera="Sony α7R V / FE 16-35mm f/2.8 GM" 
+                  data-exif="f/9.0 / 1/60s / ISO 200"
+                  data-full="https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?q=80&w=2000&auto=format&fit=crop">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?q=80&w=1000&auto=format&fit=crop" alt="Swirling amber slot canyon walls" loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span class="item-category">Wild Landscapes</span>
+                  <h4 class="item-title">Chamber of Amber Light</h4>
+                  <span class="item-loc">Arizona Canyons</span>
+                </div>
+                <button class="item-expand-btn" aria-label="View High-Resolution Image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                </button>
+              </div>
+            </div>
+          </figure>
+
+          <!-- ROW 3 (Matching Image 2: 2 Panoramic Horizontal Strips) -->
+          <!-- Item 6: Emerald Fronds in Rain -->
+          <figure class="gallery-item col-span-6 row-h-pano" data-category="botanical" tabindex="0"
+                  data-title="Emerald Fronds in Rain" 
+                  data-location="Yakushima Ancient Forest, Japan" 
+                  data-camera="Hasselblad X2D 100C / XCD 55mm f/2.5" 
+                  data-exif="f/2.8 / 1/250s / ISO 64"
+                  data-full="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=2200&auto=format&fit=crop">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1200&auto=format&fit=crop" alt="Deep green lush botanical fern leaves" loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span class="item-category">Botanical &amp; Flora</span>
+                  <h4 class="item-title">Emerald Fronds in Rain</h4>
+                  <span class="item-loc">Yakushima, Japan</span>
+                </div>
+                <button class="item-expand-btn" aria-label="View High-Resolution Image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                </button>
+              </div>
+            </div>
+          </figure>
+
+          <!-- Item 7: Morning Veil on Cedar -->
+          <figure class="gallery-item col-span-6 row-h-pano" data-category="wilds" tabindex="0"
+                  data-title="Morning Veil on Cedar" 
+                  data-location="Pacific Northwest Rainforest" 
+                  data-camera="Sony α7R V / FE 70-200mm f/2.8 GM II" 
+                  data-exif="f/5.6 / 1/320s / ISO 250"
+                  data-full="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2000&auto=format&fit=crop">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop" alt="Misty morning coniferous forest with sunbeams" loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span class="item-category">Wild Landscapes</span>
+                  <h4 class="item-title">Morning Veil on Cedar</h4>
+                  <span class="item-loc">Pacific Northwest</span>
+                </div>
+                <button class="item-expand-btn" aria-label="View High-Resolution Image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                </button>
+              </div>
+            </div>
+          </figure>
+
+          <!-- ROW 4 (Botanical Studies & Textures: 3 Columns) -->
+          <!-- Item 8: Monstera Deliciosa Macro -->
+          <figure class="gallery-item col-span-4 row-h-secondary" data-category="botanical" tabindex="0"
+                  data-title="Monstera Deliciosa Study" 
+                  data-location="Botanical Glasshouse, Prague" 
+                  data-camera="Hasselblad X2D 100C / XCD 120mm f/3.5 Macro" 
+                  data-exif="f/4.0 / 1/160s / ISO 100"
+                  data-full="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=2000&auto=format&fit=crop">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=1000&auto=format&fit=crop" alt="Close-up of deep green botanical monstera leaves" loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span class="item-category">Botanical &amp; Flora</span>
+                  <h4 class="item-title">Monstera Deliciosa Study</h4>
+                  <span class="item-loc">Prague Glasshouse</span>
+                </div>
+                <button class="item-expand-btn" aria-label="View High-Resolution Image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                </button>
+              </div>
+            </div>
+          </figure>
+
+          <!-- Item 9: Kyoto Zen Garden & Ferns -->
+          <figure class="gallery-item col-span-4 row-h-secondary" data-category="botanical" tabindex="0"
+                  data-title="Zen Garden Moss &amp; Water" 
+                  data-location="Kyoto Sanctuary, Japan" 
+                  data-camera="Leica M11 / Summicron-M 35mm f/2 ASPH" 
+                  data-exif="f/2.8 / 1/125s / ISO 200"
+                  data-full="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=2000&auto=format&fit=crop">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=1000&auto=format&fit=crop" alt="Kyoto temple garden surrounded by moss and foliage" loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span class="item-category">Botanical &amp; Flora</span>
+                  <h4 class="item-title">Zen Garden Moss &amp; Water</h4>
+                  <span class="item-loc">Kyoto, Japan</span>
+                </div>
+                <button class="item-expand-btn" aria-label="View High-Resolution Image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                </button>
+              </div>
+            </div>
+          </figure>
+
+          <!-- Item 10: Rain Pearls on Forest Floor -->
+          <figure class="gallery-item col-span-4 row-h-secondary" data-category="botanical" tabindex="0"
+                  data-title="Rain Pearls on Lichen" 
+                  data-location="Hoh Rain Forest, Washington" 
+                  data-camera="Leica M11 / APO-Summicron-M 50mm f/2" 
+                  data-exif="f/2.8 / 1/200s / ISO 160"
+                  data-full="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=2000&auto=format&fit=crop">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1000&auto=format&fit=crop" alt="Deep green forest carpet with pinecones and moss" loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span class="item-category">Botanical &amp; Flora</span>
+                  <h4 class="item-title">Rain Pearls on Lichen</h4>
+                  <span class="item-loc">Hoh Rain Forest</span>
+                </div>
+                <button class="item-expand-btn" aria-label="View High-Resolution Image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                </button>
+              </div>
+            </div>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT & GEAR SPECIFICATIONS (Inspired by Image 1 Profile & Tech Breakdown) -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        
+        <div class="about-grid">
+          <!-- Left: Photographer Portrait & Bio -->
+          <div class="about-profile-card">
+            <div class="artist-portrait-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" 
+                alt="Portrait of Aurelia Vance looking through viewfinder" 
+                class="artist-portrait-img"
+              >
+              <div class="portrait-glow"></div>
+            </div>
+            
+            <div class="artist-bio-text">
+              <span class="section-kicker">The Photographer</span>
+              <h3 class="artist-name">Aurelia Vance</h3>
+              <p class="artist-role">Naturalist, Visual Storyteller &amp; Printmaker</p>
+              
+              <p class="artist-statement">
+                Based between Kyoto and Zurich, I spend months embedded within delicate biomes. 
+                My methodology avoids digital manipulation or AI synthesis: every photograph represents 
+                pure optical fidelity, patient waiting for cloud cover, and deep respect for the land.
+              </p>
+
+              <div class="artist-credentials">
+                <div class="cred-item">
+                  <span class="cred-value">12</span>
+                  <span class="cred-label">Global Solo Exhibitions</span>
+                </div>
+                <div class="cred-item">
+                  <span class="cred-value">Leica</span>
+                  <span class="cred-label">Official Ambassador</span>
+                </div>
+                <div class="cred-item">
+                  <span class="cred-value">100%</span>
+                  <span class="cred-label">Optical / No AI Generation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Hardware & Optical Tools (Inspired by Image 1 Software/Gear Skills) -->
+          <div class="gear-stack-card">
+            <div class="gear-header">
+              <span class="section-kicker">Optical Craftsmanship</span>
+              <h3 class="gear-title">The Equipment &amp; Workflow</h3>
+              <p class="gear-desc">
+                Precision medium-format sensors and German optical glass configured for extreme field reliability.
+              </p>
+            </div>
+
+            <!-- Optical Gear Grid (Clean typography, NO dots!) -->
+            <div class="gear-grid">
+              
+              <div class="gear-item">
+                <div class="gear-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                    <circle cx="12" cy="13" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="gear-details">
+                  <h4 class="gear-name">Hasselblad X2D 100C</h4>
+                  <span class="gear-type">100MP Medium Format BSI CMOS</span>
+                  <p class="gear-note">16-bit color depth for botanical foliage gradients and massive fine art prints.</p>
+                </div>
+              </div>
+
+              <div class="gear-item">
+                <div class="gear-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <line x1="12" y1="2" x2="12" y2="5"></line>
+                    <line x1="12" y1="19" x2="12" y2="22"></line>
+                  </svg>
+                </div>
+                <div class="gear-details">
+                  <h4 class="gear-name">Leica M11 / Rangefinder</h4>
+                  <span class="gear-type">60MP Full-Frame / Noctilux Glass</span>
+                  <p class="gear-note">Silent shutter and discreet footprint for intimate desert and village portraiture.</p>
+                </div>
+              </div>
+
+              <div class="gear-item">
+                <div class="gear-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M3.6 9h16.8M3.6 15h16.8"></path>
+                  </svg>
+                </div>
+                <div class="gear-details">
+                  <h4 class="gear-name">Prime Lens Arsenal</h4>
+                  <span class="gear-type">Summicron 35mm / XCD 55mm / 90mm</span>
+                  <p class="gear-note">Apochromatic glass elements preserving microscopic vein structures in moss and sand.</p>
+                </div>
+              </div>
+
+              <div class="gear-item">
+                <div class="gear-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                  </svg>
+                </div>
+                <div class="gear-details">
+                  <h4 class="gear-name">Post-Production Atelier</h4>
+                  <span class="gear-type">Capture One Pro / EIZO ColorEdge / Photoshop</span>
+                  <p class="gear-note">Strict color-managed pipeline calibrated to Fogra39 &amp; D50 daylight standards.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Recognition Banner -->
+            <div class="recognition-strip">
+              <span class="rec-title">Featured in:</span>
+              <div class="rec-brands">
+                <span class="rec-brand">National Geographic</span>
+                <span class="rec-brand">Cereal Magazine</span>
+                <span class="rec-brand">Architectural Digest</span>
+                <span class="rec-brand">Hasselblad Masters</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FINE ART PRINTS & COLLECTORS ATELIER -->
+    <section class="section prints-section" id="prints">
+      <div class="container">
+        
+        <div class="section-header center-header">
+          <span class="section-kicker">Limited Editions</span>
+          <h2 class="section-title">Museum-Grade Fine Art Prints</h2>
+          <p class="section-desc">
+            Printed on 310gsm 100% cotton rag paper with archival pigment inks rated for 200+ years. 
+            Each piece is hand-signed and comes with a certificate of authenticity.
+          </p>
+        </div>
+
+        <div class="prints-interactive-layout">
+          <!-- Print Mockup Preview -->
+          <div class="print-visual-frame">
+            <div class="frame-wood">
+              <div class="frame-mat">
+                <img 
+                  id="printPreviewImg"
+                  src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1200&auto=format&fit=crop" 
+                  alt="Fine art framed print on gallery wall"
+                >
+              </div>
+            </div>
+            <div class="frame-caption">
+              <span id="printPreviewTitle">"Emerald Fronds in Rain" — Edition of 25</span>
+              <span id="printPreviewDimensions">50 &times; 70 cm / Hahnemühle Photo Rag</span>
+            </div>
+          </div>
+
+          <!-- Interactive Print Order Configurator -->
+          <div class="print-configurator-card">
+            <h3 class="config-title">Configure Your Print</h3>
+            <p class="config-desc">Select photographic artwork, frame finish, and museum dimensions.</p>
+
+            <form id="printConfigForm" class="config-form" onsubmit="event.preventDefault();">
+              <!-- Select Artwork -->
+              <div class="form-group">
+                <label for="artworkSelect" class="form-label">Select Artwork</label>
+                <select id="artworkSelect" class="form-select">
+                  <option value="emerald" data-img="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1200&auto=format&fit=crop">Emerald Fronds in Rain (Kyoto)</option>
+                  <option value="monolith" data-img="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1000&auto=format&fit=crop">Monolith at Sunbreak (AlUla)</option>
+                  <option value="dunes" data-img="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1000&auto=format&fit=crop">Footprints in Wind (Empty Quarter)</option>
+                  <option value="mist" data-img="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1000&auto=format&fit=crop">Morning Veil on Cedar (Pacific NW)</option>
+                </select>
+              </div>
+
+              <!-- Select Size -->
+              <div class="form-group">
+                <label class="form-label">Print Size</label>
+                <div class="pill-options" role="radiogroup">
+                  <label class="pill-radio active">
+                    <input type="radio" name="printSize" value="medium" data-price="380" checked>
+                    <span>Medium / 40 &times; 50 cm</span>
+                  </label>
+                  <label class="pill-radio">
+                    <input type="radio" name="printSize" value="large" data-price="590">
+                    <span>Large / 60 &times; 80 cm</span>
+                  </label>
+                  <label class="pill-radio">
+                    <input type="radio" name="printSize" value="collector" data-price="950">
+                    <span>Exhibition / 90 &times; 120 cm</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Select Framing -->
+              <div class="form-group">
+                <label class="form-label">Framing &amp; Mounting</label>
+                <div class="pill-options" role="radiogroup">
+                  <label class="pill-radio active">
+                    <input type="radio" name="framing" value="oak" data-frame-price="120" checked>
+                    <span>Smoked Natural Oak</span>
+                  </label>
+                  <label class="pill-radio">
+                    <input type="radio" name="framing" value="black" data-frame-price="120">
+                    <span>Matte Obsidian Aluminium</span>
+                  </label>
+                  <label class="pill-radio">
+                    <input type="radio" name="framing" value="unframed" data-frame-price="0">
+                    <span>Print Only (Rolled in Tube)</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Price & Checkout CTA -->
+              <div class="config-summary">
+                <div class="price-display">
+                  <span class="price-label">Estimated Investment</span>
+                  <span class="price-amount" id="calculatedPrice">&euro;500</span>
+                </div>
+                <button type="button" id="inquirePrintBtn" class="btn btn-primary">
+                  Inquire for Acquisition
+                </button>
+              </div>
+              <p class="config-guarantee">Insured worldwide white-glove shipping. Includes signed certificate.</p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INQUIRIES & CONTACT SECTION (Inspired by Image 1 Contact Person & 3rd Theme) -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        
+        <div class="contact-card-wrapper">
+          <div class="contact-info-col">
+            <span class="section-kicker">Commence a Collaboration</span>
+            <h2 class="contact-headline">Let's create timeless visual narratives</h2>
+            <p class="contact-sub">
+              Accepting editorial commissions, expedition assignments, and architectural projects for late 2026 and 2027.
+            </p>
+
+            <div class="contact-direct-list">
+              <div class="contact-item">
+                <span class="contact-item-label">Direct Studio Email</span>
+                <a href="mailto:atelier@aureliavance.com" class="contact-item-value">atelier@aureliavance.com</a>
+              </div>
+              <div class="contact-item">
+                <span class="contact-item-label">Representation (Europe)</span>
+                <span class="contact-item-value">Galerie Noir &amp; Vert, Zurich</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-item-label">Studio Locations</span>
+                <span class="contact-item-value">Kyoto / Zurich / Global Travel</span>
+              </div>
+            </div>
+
+            <!-- Social Handles (Clean styling, NO dots!) -->
+            <div class="social-links-row">
+              <a href="#" class="social-tag" aria-label="Instagram">Instagram / @aureliavance</a>
+              <a href="#" class="social-tag" aria-label="Behance">Behance / VancePortfolio</a>
+              <a href="#" class="social-tag" aria-label="Vimeo">Vimeo / BotanicalCine</a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-col">
+            <form id="contactForm" class="inquiry-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contactName" class="form-label">Your Name</label>
+                  <input type="text" id="contactName" class="form-input" placeholder="e.g. Elena Rostova" required>
+                </div>
+                <div class="form-group">
+                  <label for="contactEmail" class="form-label">Email Address</label>
+                  <input type="email" id="contactEmail" class="form-input" placeholder="name@domain.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inquiryType" class="form-label">Project Type</label>
+                <select id="inquiryType" class="form-select">
+                  <option value="editorial">Editorial / Publication Commission</option>
+                  <option value="commercial">Commercial / Architectural Campaign</option>
+                  <option value="print">Fine Art Print Acquisition</option>
+                  <option value="licensing">Image Licensing &amp; Exhibition</option>
+                  <option value="other">General Inquiries</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">Project Brief &amp; Timeline</label>
+                <textarea id="contactMessage" class="form-textarea" rows="4" placeholder="Describe the scope, location, and aesthetic expectations..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="submitInquiryBtn">
+                Send Inquiry
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-arrow">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX MODAL (For Fullscreen Editorial Image Inspection) -->
+  <div id="lightboxModal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image Lightbox Preview">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-content-box">
+      
+      <!-- Top controls -->
+      <div class="lightbox-top-bar">
+        <div class="lightbox-title-info">
+          <h3 id="lbTitle" class="lb-title">Emerald Fronds in Rain</h3>
+          <span id="lbLocation" class="lb-loc">Yakushima Ancient Forest, Japan</span>
+        </div>
+        <div class="lightbox-actions">
+          <button id="lbSoundBtn" class="lightbox-ctrl-btn" aria-label="Camera shutter click" title="Play Shutter Sound">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+          </button>
+          <button id="lbCloseBtn" class="lightbox-ctrl-btn" aria-label="Close Lightbox" title="Close Lightbox (Esc)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Image Display Container -->
+      <div class="lightbox-main-stage">
+        <button id="lbPrevBtn" class="lightbox-nav-btn prev-btn" aria-label="Previous photograph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+
+        <div class="lightbox-image-viewport">
+          <img id="lbMainImage" src="" alt="Photographic preview in high-resolution">
+          <div id="lbLoader" class="lightbox-loader" aria-hidden="true"></div>
+        </div>
+
+        <button id="lbNextBtn" class="lightbox-nav-btn next-btn" aria-label="Next photograph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+
+      <!-- EXIF Details Strip at Bottom of Lightbox -->
+      <div class="lightbox-bottom-bar">
+        <div class="exif-item">
+          <span class="exif-label">Optical Gear</span>
+          <span id="lbCamera" class="exif-value">Hasselblad X2D 100C / XCD 55mm f/2.5</span>
+        </div>
+        <div class="exif-item">
+          <span class="exif-label">Exposure Settings</span>
+          <span id="lbExif" class="exif-value">f/2.8 / 1/250s / ISO 64</span>
+        </div>
+        <div class="exif-item action-col">
+          <a href="#prints" id="lbInquirePrint" class="btn btn-secondary btn-sm">Acquire Fine Art Print</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col-main">
+        <span class="footer-logo">Aurelia Vance</span>
+        <p class="footer-motto">
+          Documenting botanical stillness, desert solitude, and organic harmony across the globe. All rights reserved &copy; 2026.
+        </p>
+      </div>
+      <div class="footer-col-nav">
+        <span class="footer-header">Exploration</span>
+        <ul class="footer-nav">
+          <li><a href="#series">Curated Series</a></li>
+          <li><a href="#gallery">Photo Gallery</a></li>
+          <li><a href="#about">Artist Philosophy &amp; Gear</a></li>
+          <li><a href="#prints">Limited Edition Prints</a></li>
+        </ul>
+      </div>
+      <div class="footer-col-contact">
+        <span class="footer-header">Inquiries</span>
+        <p class="footer-text">Kyoto / Zurich / Worldwide</p>
+        <a href="mailto:atelier@aureliavance.com" class="footer-email">atelier@aureliavance.com</a>
+        <div class="footer-theme-note">
+          <span class="active-mode-badge" id="footerThemeStatus">Botanical Dark Mode</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

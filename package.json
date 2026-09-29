@@ -1,0 +1,19 @@
+{
+  "name": "aurelia-vance-photographer-portfolio",
+  "version": "1.0.0",
+  "description": "High-end botanical fine art photographer portfolio inspired by organic dark botanical aesthetics, editorial gallery grids, and modern typography.",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "dev": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "photographer",
+    "portfolio",
+    "botanical",
+    "dark-mode",
+    "editorial",
+    "gallery"
+  ],
+  "author": "Aurelia Vance Studio",
+  "license": "MIT"
+}
