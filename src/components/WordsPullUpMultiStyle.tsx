@@ -16,7 +16,7 @@ export const WordsPullUpMultiStyle: React.FC<WordsPullUpMultiStyleProps> = ({
   className = '',
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const isInView = useInView(ref, { once: true, margin: '0px' });
 
   // Flatten segments into array of word tokens
   const wordTokens: { word: string; className: string; globalIndex: number }[] = [];

@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 interface WordsPullUpProps {
   text: string;
@@ -14,22 +14,20 @@ export const WordsPullUp: React.FC<WordsPullUpProps> = ({
   showAsterisk = false,
   delay = 0,
 }) => {
-  const ref = useRef<HTMLHeadingElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
   const words = text.split(' ');
 
   return (
-    <h1 ref={ref} className={`flex flex-wrap ${className}`}>
+    <h1 className={`flex flex-wrap ${className}`}>
       {words.map((word, index) => {
         const isLastWord = index === words.length - 1;
         return (
           <span key={index} className="inline-block overflow-hidden mr-[0.25em] last:mr-0">
             <motion.span
               className="inline-block relative"
-              initial={{ y: 24, opacity: 0 }}
-              animate={isInView ? { y: 0, opacity: 1 } : { y: 24, opacity: 0 }}
+              initial={{ y: 35, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{
-                duration: 0.7,
+                duration: 0.85,
                 delay: delay + index * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}

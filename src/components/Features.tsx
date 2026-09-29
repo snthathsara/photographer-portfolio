@@ -5,7 +5,7 @@ import { WordsPullUpMultiStyle } from './WordsPullUpMultiStyle';
 
 export const Features: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: true, margin: '-100px' });
+  const isInView = useInView(containerRef, { once: true, margin: '0px' });
 
   const cardVariants: Variants = {
     hidden: { opacity: 0, scale: 0.95 },
