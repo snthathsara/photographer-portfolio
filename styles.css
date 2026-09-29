@@ -7,13 +7,58 @@
 /* --------------------------------------------------------------------------
    1. CSS VARIABLES & COLOR PALETTES
    -------------------------------------------------------------------------- */
-:root {
-  /* DARK MODE (Default - Deep Botanical Forest, directly inspired by Image 3) */
+:root,
+[data-theme="light"] {
+  /* LIGHT MODE (Default - Fine Art Linen, Warm Stone & Forest Green) */
+  --bg-primary: #f5f8f3;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ebf1e9;
+  --bg-surface-hover: #dde6da;
+  --bg-glass: rgba(245, 248, 243, 0.92);
+  --bg-glass-card: rgba(255, 255, 255, 0.88);
+
+  --text-primary: #0c1a12;
+  --text-secondary: #2c4737;
+  --text-muted: #567260;
+  --text-inverse: #f4f7f2;
+
+  --accent-emerald: #1e5235;
+  --accent-emerald-light: #2b6e47;
+  --accent-emerald-glow: rgba(30, 82, 53, 0.22);
+  --accent-sage: #4d7a5d;
+  --accent-sand: #8c6c43;
+
+  --border-subtle: rgba(28, 56, 39, 0.12);
+  --border-medium: rgba(28, 56, 39, 0.22);
+  --border-focus: #1e5235;
+
+  --shadow-sm: 0 4px 14px rgba(12, 26, 18, 0.05);
+  --shadow-md: 0 12px 32px rgba(12, 26, 18, 0.08);
+  --shadow-lg: 0 24px 60px rgba(12, 26, 18, 0.12);
+  --shadow-glow: 0 0 35px rgba(43, 110, 71, 0.18);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'Space Grotesk', monospace;
+
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-theme: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* DARK MODE (Deep Midnight Forest & Luminous Emerald) */
+[data-theme="dark"] {
   --bg-primary: #0a130e;
   --bg-surface: #101c15;
   --bg-surface-elevated: #16261d;
   --bg-surface-hover: #1d3327;
-  --bg-glass: rgba(16, 28, 21, 0.85);
+  --bg-glass: rgba(16, 28, 21, 0.88);
   --bg-glass-card: rgba(22, 38, 29, 0.65);
   
   --text-primary: #f4f7f2;
@@ -35,50 +80,6 @@
   --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.35);
   --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.45);
   --shadow-glow: 0 0 40px rgba(67, 142, 99, 0.22);
-
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
-  --radius-pill: 9999px;
-
-  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-mono: 'Space Grotesk', monospace;
-
-  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-theme: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-}
-
-/* LIGHT MODE (Botanical Organic Sage, Linen & Forest Green) */
-[data-theme="light"] {
-  --bg-primary: #f3f6f1;
-  --bg-surface: #ffffff;
-  --bg-surface-elevated: #e9efe7;
-  --bg-surface-hover: #dbe5d8;
-  --bg-glass: rgba(255, 255, 255, 0.9);
-  --bg-glass-card: rgba(255, 255, 255, 0.85);
-
-  --text-primary: #0e1b13;
-  --text-secondary: #314a3a;
-  --text-muted: #5e7a68;
-  --text-inverse: #f4f7f2;
-
-  --accent-emerald: #245b3c;
-  --accent-emerald-light: #2f734d;
-  --accent-emerald-glow: rgba(36, 91, 60, 0.2);
-  --accent-sage: #507b5f;
-  --accent-sand: #98784d;
-
-  --border-subtle: rgba(36, 91, 60, 0.12);
-  --border-medium: rgba(36, 91, 60, 0.22);
-  --border-focus: #245b3c;
-
-  --shadow-sm: 0 4px 14px rgba(14, 27, 19, 0.06);
-  --shadow-md: 0 12px 32px rgba(14, 27, 19, 0.09);
-  --shadow-lg: 0 24px 60px rgba(14, 27, 19, 0.12);
-  --shadow-glow: 0 0 35px rgba(47, 115, 77, 0.15);
 }
 
 /* --------------------------------------------------------------------------
@@ -440,20 +441,22 @@ button {
 }
 
 /* Toggle icon display based on active theme */
-:root[data-theme="dark"] .sun-icon {
+:root .sun-icon,
+[data-theme="light"] .sun-icon {
+  display: none;
+}
+:root .moon-icon,
+[data-theme="light"] .moon-icon {
+  display: block;
+  stroke: var(--accent-emerald);
+}
+
+[data-theme="dark"] .sun-icon {
   display: block;
   stroke: #ffcf54;
 }
-:root[data-theme="dark"] .moon-icon {
+[data-theme="dark"] .moon-icon {
   display: none;
-}
-
-:root[data-theme="light"] .sun-icon {
-  display: none;
-}
-:root[data-theme="light"] .moon-icon {
-  display: block;
-  stroke: var(--accent-emerald);
 }
 
 .theme-label {
@@ -2193,5 +2196,122 @@ button {
 
   .section {
     padding: 60px 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   16. FLUID ANIMATIONS & SCROLL REVEALS
+   -------------------------------------------------------------------------- */
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroScale {
+  0% {
+    transform: scale(1.09);
+  }
+  100% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Hero Entrance Animations */
+.anim-fade-up {
+  opacity: 0;
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+.anim-hero-banner .hero-bg-img {
+  animation: heroScale 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Floating stat breathing */
+.hero-floating-stat {
+  animation: subtleFloat 6s ease-in-out infinite;
+}
+
+/* Scroll-triggered reveal animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle interactive card lift and glow */
+.series-card,
+.about-profile-card,
+.gear-stack-card,
+.print-configurator-card,
+.contact-card-wrapper {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.series-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.gallery-item {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md), 0 0 25px var(--accent-emerald-glow);
+}
+
+/* Micro interaction on buttons */
+.btn {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, color 0.25s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Shutter button click animation */
+.action-icon-btn:active {
+  transform: scale(0.9);
+}
+
+/* Lightbox entrance animation */
+.lightbox-modal.active .lightbox-content-box {
+  animation: heroFadeUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Accessibility: respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

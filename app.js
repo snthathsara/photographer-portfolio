@@ -11,29 +11,29 @@ document.addEventListener('DOMContentLoaded', () => {
   initInquiryForm();
   initMobileNavigation();
   initSmoothScroll();
+  initScrollReveals();
 });
 
 /* --------------------------------------------------------------------------
-   1. THEME SWITCHER (Botanical Dark & Botanical Light)
+   1. THEME SWITCHER (Light Mode by Default & Botanical Dark Mode)
    -------------------------------------------------------------------------- */
 function initThemeManager() {
   const themeToggle = document.getElementById('themeToggle');
   const themeLabel = document.getElementById('themeLabel');
   const footerThemeStatus = document.getElementById('footerThemeStatus');
 
-  // Check saved theme or system preference
+  // Check saved theme, default to light mode
   const savedTheme = localStorage.getItem('av_theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+  const initialTheme = savedTheme || 'light';
 
   applyTheme(initialTheme);
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
       applyTheme(newTheme);
-      showToast(`Switched to ${newTheme === 'dark' ? 'Botanical Dark' : 'Botanical Light'} theme`);
+      showToast(`Switched to ${newTheme === 'dark' ? 'Botanical Dark' : 'Natural Light'} mode`);
     });
   }
 
@@ -46,7 +46,7 @@ function initThemeManager() {
       themeLabel.textContent = isDark ? 'Dark Theme' : 'Light Theme';
     }
     if (footerThemeStatus) {
-      footerThemeStatus.textContent = isDark ? 'Botanical Dark Mode' : 'Botanical Light Mode';
+      footerThemeStatus.textContent = isDark ? 'Botanical Dark Mode' : 'Natural Light Mode';
     }
   }
 }
@@ -512,4 +512,31 @@ function showToast(message, type = 'info') {
       }
     }, 300);
   }, 3500);
+}
+
+/* --------------------------------------------------------------------------
+   9. SCROLL REVEAL OBSERVER (Smooth Entrance Animations)
+   -------------------------------------------------------------------------- */
+function initScrollReveals() {
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  if (!revealElements.length) return;
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.12
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('is-revealed'));
+  }
 }
