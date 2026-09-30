@@ -21,7 +21,7 @@ export const WordsPullUp: React.FC<WordsPullUpProps> = ({
       {words.map((word, index) => {
         const isLastWord = index === words.length - 1;
         return (
-          <span key={index} className="inline-block overflow-hidden mr-[0.25em] last:mr-0">
+          <span key={index} className="inline-block overflow-hidden mr-[0.25em] last:mr-0 pr-3 sm:pr-4">
             <motion.span
               className="inline-block relative"
               initial={{ y: 35, opacity: 0 }}
@@ -34,7 +34,7 @@ export const WordsPullUp: React.FC<WordsPullUpProps> = ({
             >
               {word}
               {showAsterisk && isLastWord && (
-                <span className="absolute top-[0.45em] -right-[0.32em] text-[0.35em] text-[#DEDBC8] select-none font-normal">
+                <span className="absolute top-[0.42em] -right-[0.28em] text-[0.35em] text-[#DEDBC8] select-none font-normal">
                   *
                 </span>
               )}

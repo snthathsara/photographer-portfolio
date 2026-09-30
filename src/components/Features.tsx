@@ -53,7 +53,8 @@ export const Features: React.FC = () => {
             variants={cardVariants}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
-            className="relative rounded-2xl md:rounded-3xl overflow-hidden h-[420px] lg:h-full border border-neutral-300 dark:border-white/10 group shadow-xl dark:shadow-2xl"
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: 'easeOut' } }}
+            className="relative rounded-2xl md:rounded-3xl overflow-hidden h-[420px] lg:h-full border border-neutral-300 dark:border-white/10 group shadow-xl dark:shadow-2xl transform-gpu cursor-default"
           >
             <video
               autoPlay
@@ -84,7 +85,8 @@ export const Features: React.FC = () => {
             variants={cardVariants}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
-            className="rounded-2xl md:rounded-3xl bg-white dark:bg-[#212121] border border-neutral-200 dark:border-white/10 p-6 sm:p-7 flex flex-col justify-between h-[420px] lg:h-full group hover:border-black/30 dark:hover:border-[#DEDBC8]/40 transition-colors shadow-xl dark:shadow-2xl"
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: 'easeOut' } }}
+            className="rounded-2xl md:rounded-3xl bg-white dark:bg-[#212121] border border-neutral-200 dark:border-white/10 p-6 sm:p-7 flex flex-col justify-between h-[420px] lg:h-full group hover:border-black/30 dark:hover:border-[#DEDBC8]/40 transition-colors shadow-xl dark:shadow-2xl transform-gpu cursor-default"
           >
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between">
@@ -136,7 +138,8 @@ export const Features: React.FC = () => {
             variants={cardVariants}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
-            className="rounded-2xl md:rounded-3xl bg-white dark:bg-[#212121] border border-neutral-200 dark:border-white/10 p-6 sm:p-7 flex flex-col justify-between h-[420px] lg:h-full group hover:border-black/30 dark:hover:border-[#DEDBC8]/40 transition-colors shadow-xl dark:shadow-2xl"
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: 'easeOut' } }}
+            className="rounded-2xl md:rounded-3xl bg-white dark:bg-[#212121] border border-neutral-200 dark:border-white/10 p-6 sm:p-7 flex flex-col justify-between h-[420px] lg:h-full group hover:border-black/30 dark:hover:border-[#DEDBC8]/40 transition-colors shadow-xl dark:shadow-2xl transform-gpu cursor-default"
           >
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between">
@@ -184,7 +187,8 @@ export const Features: React.FC = () => {
             variants={cardVariants}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
-            className="rounded-2xl md:rounded-3xl bg-white dark:bg-[#212121] border border-neutral-200 dark:border-white/10 p-6 sm:p-7 flex flex-col justify-between h-[420px] lg:h-full group hover:border-black/30 dark:hover:border-[#DEDBC8]/40 transition-colors shadow-xl dark:shadow-2xl"
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: 'easeOut' } }}
+            className="rounded-2xl md:rounded-3xl bg-white dark:bg-[#212121] border border-neutral-200 dark:border-white/10 p-6 sm:p-7 flex flex-col justify-between h-[420px] lg:h-full group hover:border-black/30 dark:hover:border-[#DEDBC8]/40 transition-colors shadow-xl dark:shadow-2xl transform-gpu cursor-default"
           >
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between">

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useScroll } from 'framer-motion';
+import { useScroll, motion } from 'framer-motion';
 import { WordsPullUpMultiStyle } from './WordsPullUpMultiStyle';
 import { AnimatedLetter } from './AnimatedLetter';
 
@@ -62,22 +62,25 @@ export const About: React.FC = () => {
 
           {/* Credentials Strip (Clean typography, NO dots!) */}
           <div className="relative z-10 w-full pt-10 border-t border-neutral-200 dark:border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <span className="block text-xl sm:text-2xl font-bold text-neutral-900 dark:text-[#E1E0CC]">14+</span>
-              <span className="text-[10px] sm:text-xs tracking-wider uppercase text-neutral-500 dark:text-gray-400 font-light">Years in Field</span>
-            </div>
-            <div>
-              <span className="block text-xl sm:text-2xl font-bold text-neutral-900 dark:text-[#E1E0CC]">32</span>
-              <span className="text-[10px] sm:text-xs tracking-wider uppercase text-neutral-500 dark:text-gray-400 font-light">Countries Surveyed</span>
-            </div>
-            <div>
-              <span className="block text-xl sm:text-2xl font-bold text-neutral-900 dark:text-[#E1E0CC]">100MP</span>
-              <span className="text-[10px] sm:text-xs tracking-wider uppercase text-neutral-500 dark:text-gray-400 font-light">Medium Format BSI</span>
-            </div>
-            <div>
-              <span className="block text-xl sm:text-2xl font-bold text-neutral-900 dark:text-[#E1E0CC]">100%</span>
-              <span className="text-[10px] sm:text-xs tracking-wider uppercase text-neutral-500 dark:text-gray-400 font-light">Optical / Zero AI</span>
-            </div>
+            {[
+              { val: '14+', label: 'Years in Field' },
+              { val: '32', label: 'Countries Surveyed' },
+              { val: '100MP', label: 'Medium Format BSI' },
+              { val: '100%', label: 'Optical / Zero AI' },
+            ].map((stat, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -2 }}
+                className="transition-transform duration-200"
+              >
+                <span className="block text-xl sm:text-2xl font-bold text-neutral-900 dark:text-[#E1E0CC]">{stat.val}</span>
+                <span className="text-[10px] sm:text-xs tracking-wider uppercase text-neutral-500 dark:text-gray-400 font-light">{stat.label}</span>
+              </motion.div>
+            ))}
           </div>
 
         </div>

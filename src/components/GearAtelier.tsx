@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Camera, Eye, Disc, Cpu } from 'lucide-react';
 
 export const GearAtelier: React.FC = () => {
@@ -48,16 +49,21 @@ export const GearAtelier: React.FC = () => {
           </p>
         </div>
 
-        {/* 4 Cards Grid */}
+        {/* 4 Cards Grid with Smooth Staggered Reveals */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {tools.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <div
+              <motion.div
                 key={idx}
-                className="p-6 sm:p-8 rounded-2xl md:rounded-3xl bg-white dark:bg-[#141414] border border-neutral-200 dark:border-white/10 hover:border-black/30 dark:hover:border-[#DEDBC8]/40 transition-colors flex gap-5 group shadow-lg dark:shadow-2xl"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -5, transition: { duration: 0.25, ease: 'easeOut' } }}
+                className="p-6 sm:p-8 rounded-2xl md:rounded-3xl bg-white dark:bg-[#141414] border border-neutral-200 dark:border-white/10 hover:border-black/30 dark:hover:border-[#DEDBC8]/40 transition-colors flex gap-5 group shadow-lg dark:shadow-2xl transform-gpu cursor-default"
               >
-                <div className="w-12 h-12 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-900 dark:text-[#DEDBC8] shrink-0 group-hover:bg-black dark:group-hover:bg-[#DEDBC8] group-hover:text-white dark:group-hover:text-black transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-900 dark:text-[#DEDBC8] shrink-0 group-hover:bg-black dark:group-hover:bg-[#DEDBC8] group-hover:text-white dark:group-hover:text-black transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
                   <Icon className="w-6 h-6" />
                 </div>
                 <div className="flex flex-col gap-1.5">
@@ -67,7 +73,7 @@ export const GearAtelier: React.FC = () => {
                     {item.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

@@ -236,9 +236,10 @@ export const Gallery: React.FC = () => {
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.96 }}
+                  whileHover={{ y: -5, transition: { duration: 0.25, ease: 'easeOut' } }}
                   transition={{ duration: 0.45 }}
                   onClick={() => setLightboxIndex(index)}
-                  className={`group relative rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer border border-neutral-200 dark:border-white/10 bg-neutral-100 dark:bg-[#121212] ${colClass} ${heightClass} shadow-xl`}
+                  className={`group relative rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer border border-neutral-200 dark:border-white/10 bg-neutral-100 dark:bg-[#121212] ${colClass} ${heightClass} shadow-xl transform-gpu`}
                 >
                   <img
                     src={photo.thumb}

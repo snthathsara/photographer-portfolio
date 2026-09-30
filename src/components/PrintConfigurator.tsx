@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface ArtworkOption {
   id: string;
@@ -81,23 +82,34 @@ export const PrintConfigurator: React.FC = () => {
         {/* 2-Column Configurator Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column (7 cols): Mockup Frame */}
+          {/* Left Column (7 cols): Mockup Frame with smooth layout animations */}
           <div className="lg:col-span-7 flex flex-col items-center">
-            <div className={`w-full max-w-lg p-5 sm:p-7 rounded-2xl shadow-xl dark:shadow-2xl transition-all duration-500 ${
-              selectedFrame.id === 'oak'
-                ? 'bg-[#e2d5c5] dark:bg-[#2a221b] border-4 border-[#c5b19c] dark:border-[#3d3126]'
-                : selectedFrame.id === 'black'
-                ? 'bg-neutral-800 dark:bg-[#181818] border-4 border-neutral-900 dark:border-[#2b2b2b]'
-                : 'bg-transparent border border-neutral-300 dark:border-white/20'
-            }`}>
-              <div className="bg-[#FAF8F5] p-6 sm:p-8 shadow-inner rounded-sm">
-                <img
-                  src={selectedArtwork.img}
-                  alt={selectedArtwork.name}
-                  className="w-full aspect-[4/3] object-cover rounded-sm shadow-md transition-opacity duration-300"
-                />
+            <motion.div
+              layout
+              transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+              className={`w-full max-w-lg p-5 sm:p-7 rounded-2xl shadow-xl dark:shadow-2xl transition-colors duration-500 ${
+                selectedFrame.id === 'oak'
+                  ? 'bg-[#e2d5c5] dark:bg-[#2a221b] border-4 border-[#c5b19c] dark:border-[#3d3126]'
+                  : selectedFrame.id === 'black'
+                  ? 'bg-neutral-800 dark:bg-[#181818] border-4 border-neutral-900 dark:border-[#2b2b2b]'
+                  : 'bg-transparent border border-neutral-300 dark:border-white/20'
+              }`}
+            >
+              <div className="bg-[#FAF8F5] p-6 sm:p-8 shadow-inner rounded-sm overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={selectedArtwork.id}
+                    src={selectedArtwork.img}
+                    alt={selectedArtwork.name}
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.35, ease: 'easeOut' }}
+                    className="w-full aspect-[4/3] object-cover rounded-sm shadow-md"
+                  />
+                </AnimatePresence>
               </div>
-            </div>
+            </motion.div>
 
             <div className="mt-6 text-center">
               <span className="block text-sm sm:text-base font-medium text-neutral-900 dark:text-[#E1E0CC]">
@@ -127,7 +139,7 @@ export const PrintConfigurator: React.FC = () => {
                   const match = ARTWORKS.find((a) => a.id === e.target.value);
                   if (match) setSelectedArtwork(match);
                 }}
-                className="w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-[#1d1d1d] border border-neutral-300 dark:border-white/10 text-xs sm:text-sm text-neutral-900 dark:text-[#E1E0CC] focus:outline-none focus:border-black dark:focus:border-[#DEDBC8]"
+                className="w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-[#1d1d1d] border border-neutral-300 dark:border-white/10 text-xs sm:text-sm text-neutral-900 dark:text-[#E1E0CC] focus:outline-none focus:border-black dark:focus:border-[#DEDBC8] transition-colors"
               >
                 {ARTWORKS.map((a) => (
                   <option key={a.id} value={a.id} className="bg-white dark:bg-[#181818] text-neutral-900 dark:text-[#E1E0CC]">
@@ -144,9 +156,11 @@ export const PrintConfigurator: React.FC = () => {
               </label>
               <div className="flex flex-col gap-2">
                 {sizes.map((s) => (
-                  <button
+                  <motion.button
                     key={s.id}
                     type="button"
+                    whileTap={{ scale: 0.98 }}
+                    whileHover={{ scale: 1.01 }}
                     onClick={() => setSelectedSize(s)}
                     className={`flex items-center justify-between px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium border transition-colors ${
                       selectedSize.id === s.id
@@ -156,7 +170,7 @@ export const PrintConfigurator: React.FC = () => {
                   >
                     <span>{s.label}</span>
                     <span className="font-mono text-xs">€{s.price}</span>
-                  </button>
+                  </motion.button>
                 ))}
               </div>
             </div>
@@ -168,9 +182,11 @@ export const PrintConfigurator: React.FC = () => {
               </label>
               <div className="flex flex-col gap-2">
                 {frames.map((f) => (
-                  <button
+                  <motion.button
                     key={f.id}
                     type="button"
+                    whileTap={{ scale: 0.98 }}
+                    whileHover={{ scale: 1.01 }}
                     onClick={() => setSelectedFrame(f)}
                     className={`flex items-center justify-between px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium border transition-colors ${
                       selectedFrame.id === f.id
@@ -180,7 +196,7 @@ export const PrintConfigurator: React.FC = () => {
                   >
                     <span>{f.label}</span>
                     <span className="font-mono text-xs">{f.price > 0 ? `+€${f.price}` : 'Included'}</span>
-                  </button>
+                  </motion.button>
                 ))}
               </div>
             </div>
@@ -193,12 +209,14 @@ export const PrintConfigurator: React.FC = () => {
                 </span>
                 <span className="text-2xl font-bold text-neutral-900 dark:text-[#E1E0CC]">€{totalPrice}</span>
               </div>
-              <a
+              <motion.a
                 href="#contact"
-                className="px-6 py-3 rounded-full bg-black dark:bg-[#DEDBC8] text-white dark:text-black font-medium text-xs sm:text-sm hover:bg-neutral-800 dark:hover:bg-white transition-colors"
+                whileHover={{ scale: 1.03, y: -1 }}
+                whileTap={{ scale: 0.97 }}
+                className="px-6 py-3 rounded-full bg-black dark:bg-[#DEDBC8] text-white dark:text-black font-medium text-xs sm:text-sm hover:bg-neutral-800 dark:hover:bg-white transition-all shadow-md"
               >
                 Inquire Acquisition
-              </a>
+              </motion.a>
             </div>
 
           </div>
